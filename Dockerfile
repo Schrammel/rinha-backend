@@ -8,6 +8,10 @@ RUN apt install -y unzip
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && apt-get install -y nodejs
 COPY . ./src
 RUN cd src && bun install && bunx prisma generate
+RUN apt autoremove -y curl 
+RUN apt autoremove -y unzip
+RUN apt clean
+
 WORKDIR /usr/src
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \

@@ -3,8 +3,9 @@
   "module": "index.ts",
   "type": "module",
   "scripts": {
-    "prod:migration": "bunx prisma migrate dev && bun prisma/seed.ts && bun index.ts",
-    "prod": "bun index.ts"
+    "build": "docker build -t davidschrammel/prisma_rinha_backend .",
+    "prod:migration": "cd src && bunx prisma migrate dev && bun prisma/seed.ts && bun index.ts",
+    "prod": "cd src && bunx prisma migrate dev && bun index.ts"
   },
   "devDependencies": {
     "bun-types": "latest",

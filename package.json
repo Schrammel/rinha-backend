@@ -1,0 +1,19 @@
+{
+  "name": "rinha",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "prod:migration": "bunx prisma migrate dev && bun prisma/seed.ts && bun index.ts",
+    "prod": "bun index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prisma": "5.9.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.9.1"
+  }
+}

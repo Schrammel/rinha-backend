@@ -59,13 +59,10 @@ export const extrato = async ({ conta }: { conta: number }) => {
             realizada_em: true,
           },
           orderBy:  {
-
-        realizada_em: "desc",
+            realizada_em: "desc",
           },
           take: 10
-
         },
-
       },
       where: {
         id: conta,
